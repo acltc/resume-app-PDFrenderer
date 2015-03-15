@@ -1,8 +1,11 @@
 source 'https://rubygems.org'
 
+# by Author
+gem 'unirest'
+gem 'prawn' 
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'prawn'
 gem 'rails', '4.2.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
