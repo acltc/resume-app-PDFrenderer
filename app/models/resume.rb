@@ -14,8 +14,8 @@ class Resume
   end
 
   def self.find(id)
-    wood = Unirest.get("http://localhost:3002/lumbers/#{id}.json").body
-    Wood.new(wood)
+    wood = Unirest.get("http://localhost:3000/lumbers/#{id}.json").body
+    Resume.new(wood)
   end
 
   def self.all
