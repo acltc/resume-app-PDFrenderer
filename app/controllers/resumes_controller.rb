@@ -2,14 +2,14 @@ class ResumesController < ApplicationController
 
   def index
 
-    @wood = Resume.all
+    @student = Resume.find("1")
 
 
         respond_to do |format|
           format.html
           # format.json { render json: @wood }
           format.pdf do
-            pdf = ReportPdf.new(@wood)
+            pdf = ReportPdf.new(@student)
             send_data pdf.render, filename: 'report.pdf', type: 'application/pdf'
           end
 
