@@ -2,3 +2,7 @@
 
 # Add new mime types for use in respond_to blocks:
 # Mime::Type.register "text/richtext", :rtf
+
+
+# I think this make a directory called application that will save the pdf file.
+Mime::Type.register "application/pdf", :pdf
