@@ -1,29 +1,39 @@
 class Resume
-  attr_reader :id, :dimensions, :sizes, :use, :species
+  attr_reader :id, :first_name, :last_name, :email, :phone_number, :linkedin, :twitter, :blog, :online_resume, :github, :photo, :short_bio, :skills, :educations, :experiences
 
   def initialize(args)
-    @id         = args["id"]
-    @dimensions = args["dimensions"]
-    @sizes      = args["sizes"]
-    @use        = args["use"]
-    @species    = args["species"]
+    @id             = args["id"]
+    @first_name     = args["first_name"]
+    @last_name      = args["last_name"]
+    @email          = args["email"]
+    @phone_number   = args["phone_number"]
+    @linkedin       = args["linkedin"]
+    @twitter        = args["twitter"]
+    @blog           = args["blog"]
+    @online_resume  = args["online_resume"]
+    @github         = args["github"]
+    @photo          = args["photo"]
+    @short_bio      = args["short_bio"]
+    @skills         = args["skills"]
+    @educations     = args["educations"]
+    @experiences    = args["experiences"]
   end
 
   def full_name
-    "#{id} #{dimensions} #{sizes} #{use} #{species}"
+    
   end
 
   def self.find(id)
-    wood = Unirest.get("http://localhost:3000/lumbers/#{id}.json").body
-    Resume.new(wood)
+    student = Unirest.get("http://localhost:3000/students/#{id}.json").body
+    Resume.new(student)
   end
 
   def self.all
-    all_wood_array = Unirest.get("http://localhost:3000/lumbers.json").body["lumber"]
-    @wood = []
-    all_wood_array.each do |wood_hash|
-      @wood << Resume.new(wood_hash)
+    all_students_array = Unirest.get("http://localhost:3000/students.json").body["lumber"]
+    @students = []
+    all_students_array.each do |student_hash|
+      @students << Resume.new(student_hash)
     end
-    @wood
+    @students
   end
 end

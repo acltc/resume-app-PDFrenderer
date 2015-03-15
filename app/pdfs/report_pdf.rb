@@ -1,12 +1,13 @@
 class ReportPdf < Prawn::Document
 
-  def initialize(products)
+  def initialize(student)
     super()
-    @wood = products
+    @student = student
     header
     text_content
     # table_content
-    name = Resume.find(1)
+    puts "*******************************"
+    p @student.id
     
   end
 
@@ -24,14 +25,10 @@ class ReportPdf < Prawn::Document
  
     # The bounding_box takes the x and y coordinates for positioning its content and some options to style it
     bounding_box([0, y_position], :width => 270, :height => 300) do
-      @wood.each do |wood|
-        text wood.species, size: 15, style: :bold
-      end
+      text @student.first_name
+      test @student.
+    
 
-      @wood.each do |wood|
-        text wood.dimensions, size: 15, style: :bold
-      end
-      
     end
  
     bounding_box([300, y_position], :width => 270, :height => 300) do
