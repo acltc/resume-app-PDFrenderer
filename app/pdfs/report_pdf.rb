@@ -1,3 +1,4 @@
+
 class ReportPdf < Prawn::Document
 
   def initialize(student)
@@ -7,7 +8,7 @@ class ReportPdf < Prawn::Document
     text_content
     # table_content
     puts "*******************************"
-    p @student.id
+    p @student
     
   end
 
@@ -15,8 +16,10 @@ class ReportPdf < Prawn::Document
  
   def header
     #This inserts an image in the pdf file and sets the size of the image
-    image "#{Rails.root}/app/assets/images/Stacked_wood.JPG", width: 530, height: 150
+    image "#{Rails.root}/app/assets/images/morris.JPG", width: 150, height: 150
   end
+
+
  
   def text_content
     
@@ -25,11 +28,18 @@ class ReportPdf < Prawn::Document
  
     # The bounding_box takes the x and y coordinates for positioning its content and some options to style it
     bounding_box([0, y_position], :width => 270, :height => 300) do
-      text @student.first_name
-      test @student.
+      text @student.last_name, size: 15, style: :bold
+      text @student.first_name, size: 15, style: :bold
+
+# NEED TO SKILLS, EDUCATION AND EXPERIENCES ARE HASES OF ARRAYS. NEED TO ITERATE TRHOUGH THEM TO GET THE DESIRED DATA BELOW MIGHT BE ONE WAY OF DOING IT!
+      @student.skills.each do |x|
+        text x["skill_name"], size: 15, style: :bold
+      end
+    end
+
+    
     
 
-    end
  
     bounding_box([300, y_position], :width => 270, :height => 300) do
       text "Duis vel", size: 15, style: :bold
