@@ -15,7 +15,14 @@ class ReportPdf < Prawn::Document
  
   def header
     #This inserts an image in the pdf file and sets the size of the image
-    image "#{Rails.root}/app/assets/images/Stacked_wood.JPG", width: 530, height: 150
+    # image "#{Rails.root}/app/assets/images/Stacked_wood.JPG", width: 150, height: 150
+    #On it's own, this doesn't position anything in header
+    y_position = cursor - 100
+     
+    text "#{@student.first_name} #{@student.last_name}", size: 30, style: :bold 
+    text "#{@student.email} #{@student.phone_number} #{@student.blog}", size: 12 
+    
+
   end
  
   def text_content
@@ -25,8 +32,11 @@ class ReportPdf < Prawn::Document
  
     # The bounding_box takes the x and y coordinates for positioning its content and some options to style it
     bounding_box([0, y_position], :width => 270, :height => 300) do
-      text "#{@student.first_name} #{@student.last_name}", size: 30, style: :bold 
-      #text @student.last_name
+      text "Experience", size: 10, style: :bold 
+      text "#{@student.experiences}"
+      text "#{@student.educations}" 
+      text @student["job_title"]
+      p @student
     
 
     end
