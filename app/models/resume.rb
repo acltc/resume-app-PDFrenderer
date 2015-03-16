@@ -20,7 +20,7 @@ class Resume
   end
 
   def full_name
-    
+    return "#{@first_name.upcase} #{@last_name.upcase}"
   end
 
   def self.find(id)
