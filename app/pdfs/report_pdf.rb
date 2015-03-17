@@ -26,8 +26,13 @@ class ReportPdf < Prawn::Document
     
 
   end
+
+  
+
  
   def text_content
+        text "    \u2022 Here's the first thing" 
+        text "    \u2022 and the second" 
     
     # The cursor for inserting content starts on the top left of the page. Here we move it down a little to create more space between the text and the image inserted above
     y_position = cursor - 30
