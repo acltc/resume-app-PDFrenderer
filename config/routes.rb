@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
-  get '/resumes'         => 'resumes#index'
-  resources :resumes
+  # resources :resumes
+  get '/resumes/:id' => 'resumes#show'
+  get '/resumes/down_load_pdf/:id' => 'resumes#down_load_pdf'
+  get '/resumes/leach_template_show/:id' => 'resumes#leach_template_show'
+  get '/resumes/walsh_template_show/:id' => 'resumes#walsh_template_show'
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
