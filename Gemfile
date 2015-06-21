@@ -2,7 +2,9 @@ source 'https://rubygems.org'
 
 # by Author
 gem 'unirest'
-gem 'prawn' 
+gem 'prawn', '~> 0.15.0'
+gem 'pry'
+gem 'prawn-table', '~> 0.2.1' 
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -42,6 +44,7 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  gem "spring", '~> 1.3.6'
+
 end
 
