@@ -85,7 +85,7 @@ class LeachPdf < Prawn::Document
   end
 
   def references
-    bounding_box [bounds.left, bounds.bottom + 10], :width  => bounds.width do
+    bounding_box([bounds.left, bounds.bottom + 10], :width  => bounds.width) do
       data = [["References upon request"]]
       table(data, :position => :center, :cell_style => { :borders => [] } )
     end
