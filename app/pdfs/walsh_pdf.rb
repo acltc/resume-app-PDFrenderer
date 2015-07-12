@@ -157,18 +157,4 @@ private
     end
     return new_sub_table
   end
-
-
 end
-# new_sub_table << Array.new(1, "\u2022 " + array_elements["detail"])
-# text "\u2022 Ruby on Rails"
-# text "\u2022 REST"
-# text "\u2022 Listening to Jay's lectures"
-# text "\u2022 Another skill"
-# text "\u2022 More skills, more space, how long until next "
-# text "\u2022 More skills"
-
-# [16] pry(#<ReportPdf>)> array.map { |detail| stuff.push(detail["detail"]) }
-# => [["Minor in Philosophy", "GPA of 3.67.4.0 upon graduating"], ["Minor in Philosophy", "GPA of 3.67.4.0 upon graduating"]]
-# [17] pry(#<ReportPdf>)> stuff
-

@@ -113,6 +113,3 @@ class LeachPdf < Prawn::Document
     end
 
 end
-
-# ["this is cell one", "this is cell two"]])
-# {:content => "#{education["university_name"]}", :padding => [0, 0, 0, 0], :align => :justify}, {:content => "#{education["degree"]}", :padding => [0, 0, 0, 0], :align => :center} ],
