@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # resources :resumes
-  root 'resumes/index'
+  root 'resumes#index'
   get '/resumes/:id' => 'resumes#show'
   get '/resumes/down_load_pdf/:id' => 'resumes#down_load_pdf'
   get '/resumes/leach_template_show/:id' => 'resumes#leach_template_show'
