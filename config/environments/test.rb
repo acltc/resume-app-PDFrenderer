@@ -39,6 +39,8 @@ Rails.application.configure do
 
   # added this for my routes need to change in 3 places prod, devel and test
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.default_url_options = { host: 'localhost', port: 3000 }
+  
   
 
   # Raises error for missing translations
