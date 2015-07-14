@@ -75,4 +75,7 @@ Rails.application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  # added this for my routes need to change in 3 places prod, devel and test
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end
